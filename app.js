@@ -179,21 +179,36 @@ var localCard = 0;
 
 
 // create cloze cards
-
+var correct1 = 0;
+var incorrect1 = 0;
 function runMycards(obj) {
-  console.log("I made it this far");
-  console.log(obj[0].question);
-  // console.log(obj.lenght);
-  if ( localCard < 2 ){
+ 
+
+  
+  if ( localCard < 3 ){
   inquirer.prompt([{
     name: 'question',
     message: obj[localCard].question,
     type: 'string'
   }]).then(function (answer) {
+   
     if (answer.question == obj[localCard].answer){
       console.log("correct");
-    }else{ console.log("incorrect");}
+      localCard++
+  correct1++
+  
+
+      runMycards(obj);
+
+    }else{ console.log("incorrect");
+    localCard++
+    incorrect1++
+    runMycards(obj);
+  ;}
 
   })
+}else{
+  console.log(`you had ${correct1} question right and ${incorrect1} questions wrong`);
+  
 }
 }
