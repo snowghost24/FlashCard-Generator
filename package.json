@@ -19,6 +19,6 @@
   },
   "homepage": "https://github.com/snowghost24/FlashCard-Generator#readme",
   "dependencies": {
-    "requirer": "0.0.4"
+    "inquirer": "^3.3.0"
   }
 }
