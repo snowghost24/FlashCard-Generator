@@ -1,23 +1,34 @@
 
-function NBAPlayers(name,number){
-   this.teamPlayed = [];
-   this.name = name;
-   this.number = number;
-   this.teamPusher = function (x){
-      this.teamPlayed.push(new TeamConstructor(x))
-   };
- }
+// function NBAPlayers(name,number){
+//    this.teamPlayed = [];
+//    this.name = name;
+//    this.number = number;
+//    this.teamPusher = function (x){
+//       this.teamPlayed.push(new TeamConstructor(x))
+//    };
+//  }
 
- function TeamConstructor (newTeam){
-  this.newTeam = newTeam
-}
+//  function TeamConstructor (newTeam){
+//   this.newTeam = newTeam
+// }
 
 
-var firstPlayer = new NBAPlayers('Dwane Wade',3);
-// var newTeam = new TeamConstructor('Miami')
-firstPlayer.teamPusher('Miami');
-console.log(firstPlayer.name);
-console.log(firstPlayer.teamPlayed)
+// var firstPlayer = new NBAPlayers('Dwane Wade',3);
+// // var newTeam = new TeamConstructor('Miami')
+// firstPlayer.teamPusher('Miami');
+// console.log(firstPlayer.name);
+// console.log(firstPlayer.teamPlayed)
+
+
+
+var fs = require('fs');
+var obj;
+fs.readFile(__dirname +'/one.json',"utf8", function (err, data) {
+  if (err) throw err;
+  obj = JSON.parse(data);
+  console.log(obj);
+});
+
 
 
 
